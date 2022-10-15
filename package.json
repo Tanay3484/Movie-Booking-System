@@ -1,0 +1,22 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "Database Management System for Movie Booking Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanay3484/Movie-Booking-System.git"
+  },
+  "author": "Tanay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tanay3484/Movie-Booking-System/issues"
+  },
+  "homepage": "https://github.com/Tanay3484/Movie-Booking-System#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
