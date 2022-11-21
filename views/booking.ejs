@@ -1,0 +1,79 @@
+<%- include('booking_head',{title:'Book Tickets',user:username}) %>
+<body>
+    <div class="d-flex justify-content-center align-items-center flex-column"  style="margin-top: 5em;"">
+        <div class="card text-bg-info border-primary mb-3" style="padding: 2em;">
+            <h1 class="card-title"><%=movie_name%></h1>
+            <h2 class="card-subtitle mb-2 text-muted"><%=movie_lang%></h2>
+            <p class="card-text"><strong>Genre: <%=movie_genre%></strong></p>
+            <form method="post" action="/book_tickets?movie_id=<%=movie_id%>&username=<%=username%>">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label" for="theatre_id">Select preferred Theatre : </label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="theatre_id" id="theatre_id" aria-label="Select Theatre">
+                            <option value="PVR (Phoneix Marketcity)">PVR Cinemas Phoneix Marketcity Mall,Mahadevpura</option>
+                            <option value="PVR-IMAX (VR Mall)">PVR IMAX VR Mall,Mahadevpura</option>
+                            <option value="Inox (Gopalan Signature Mall)">Inox @ Gopalan Signature Mall,Old Madras Road</option>
+                            <option value="PVR (Soulspace Spirit Mall)">PVR Soulspace Spirit Mall, Bellandur</option>
+                            <option value="Meenakshi Cinema Hall">Meenakshi Cinema Hall,Marathalli Multiplex</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label" for="seat_type">Select preferred seat type : </label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="seat_type" id="seat_type" aria-label="Select Seats">
+                            <option value="Silver">Silver (Front-Row Seats) - (₹320)</option>
+                            <option value="Gold">Gold(Back-Row Seats) - (₹340)</option>
+                            <option value="Premium">Premium (Recliner Seats) - (₹610) </option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label" for="admits">Enter the number of seats : </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="number" name="admits" id="admits" min="1">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label" for="show_date">Select the show date : </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="date" name="show_date" id="show_date">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label" for="show_time">Select the show time : </label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="show_time" id="show_time" aria-label="Select Time show">
+                            <option value="06:00:00">6 AM</option>
+                            <option value="08:00:00">8 AM</option>
+                            <option value="12:00:00">12 PM</option>
+                            <option value="14:00:00">2 PM</option>
+                            <option value="17:00:00">5 PM</option>
+                            <option value="20:00:00">8 PM</option>
+                            <option value="23:00:00">11 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Book Ticket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

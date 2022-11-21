@@ -1,0 +1,29 @@
+<%- include('loginHead',{title:"Login Page"}) -%>
+
+<body>
+    <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center border-bottom">
+        <div>
+            <h1 class="display-6 text-wrap">Please Enter your login credentials here</h1>
+        </div>
+        <br>
+        <div>
+            <form method="post" action="/">
+                <p>
+                    <label for="username">Username : </label>
+                    <input type="text" name="username" id="username">
+                </p>
+                <p>
+                    <label for="password">Password : </label>
+                    <input type="password" name="password" id="password">
+                </p>
+                <div class="d-flex justify-content-center">
+                    <p>
+                        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div><button onclick="location.href = '/register';" id="myButton" class="btn btn-success">If you are a new user, please click this link</a></div>
+    </div>
+</body>
+

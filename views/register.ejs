@@ -1,0 +1,84 @@
+<%- include('registerHead',{title:"User Registration"}) -%>
+
+<body>
+    <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center border-bottom">
+        <div>
+            <h1>Please enter your details here : </h1> 
+        </div>
+        <br>
+        <div>
+            <form method="post" action="/register" class="mx-auto row g-3 needs-validation" novalidate>
+                <div class="col-md-4">
+                    <label for="first_name" class="form-label">Enter your first name : </label>
+                    <input type="text" class="form-control" name="first_name" id="validationFName" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="last_name" class="form-label">Enter your last name : </label>
+                    <input type="text" class="form-control" name="last_name" id="validationLName" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="phone_number" class="form-label">Enter your phone number : </label>
+                    <input type="tel" id="validationPhoneNumber" class="form-control" name="phone_number" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" aria-describedby="inputGroupPrepend" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Please enter a correct phone number.</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Enter your email id : </label>
+                    <input type="email" class="form-control" id="validationEmail" name="email" required>
+                    <div class="valid-feedback">Looks Good</div>
+                    <div class="invalid-feedback">Please enter a valid email id</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="username" class="form-label">Enter a suitable username : </label>
+                    <input type="text" id="username" name="username" onblur="blurFunction()" class="form-control" pattern="^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$" required>
+                    <div class="valid-feedback">Username unique</div>
+                    <div class="invalid-feedback">Username already exists!</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="password">Enter a suitable password : </label>
+                    <input type="password" id="password" name="password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,10}$" required>
+                    <div class="valid-feedback">Looks Good</div>
+                    <div class="invalid-feedback">Please enter the password in the following format :One special character, One Uppercase Letter, One Number, One lowercase letter , Min length : 5, Max Length : 10</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="age">Enter your age : </label>
+                    <input type="number" name="age" id="age" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var username_box = document.getElementById('username');
+    username_box.addEventListener('blur',function(){
+        let user_name = username_box.innerText;
+        if(user_name in user_list){
+            user_name.classList.add('invalid-feedback')
+        }
+        else{
+            user_name.classList.add('valid-feedback')
+        }
+    })
+    (() => {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>

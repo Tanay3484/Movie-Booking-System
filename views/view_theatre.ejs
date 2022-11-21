@@ -1,0 +1,21 @@
+<%- include('viewTheatreHead',{title:'View Theatres',user:user}) -%>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Theatre Name</th>
+                <th scope="col">Theatre Location</th>
+                <th scope="col">Theatre Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0;i<theatre_names.length;i++){%>
+                <tr>
+                    <td><%=theatre_names[i]%></td>
+                    <td><%=theatre_locations[i]%></td>
+                    <td><%=theatre_types[i]%></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
